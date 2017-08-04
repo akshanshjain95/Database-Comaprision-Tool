@@ -1,7 +1,6 @@
 package knoldus.DatabaseComparisonTool
 
 import java.sql.{Connection, DriverManager}
-
 import org.apache.log4j.Logger
 
 
