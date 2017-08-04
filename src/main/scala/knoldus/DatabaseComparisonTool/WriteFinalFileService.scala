@@ -1,15 +1,14 @@
 package knoldus.DatabaseComparisonTool
 
-/**
-  * Created by knoldus on 3/8/17.
-  */
+
+
 object WriteFinalFileService {
 
   def writeFinalFile(testCaseList: List[TestCase], mySQLTimeList: List[Long],
-                     postgreSQLTimeList: List[Long], SQLiteTimeList: List[Long]) = {
+                     postgreSQLTimeList: List[Long], SQLiteTimeList: List[Long]): Boolean = {
 
     val listZip = testCaseList zip mySQLTimeList zip postgreSQLTimeList zip SQLiteTimeList map {
-      case (((a,b),c),d) => (a,b,c,d)
+      case (((testCase,mySQLTime),postgreSQLTime),sqliteTime) => (testCase,mySQLTime,postgreSQLTime,sqliteTime)
     }
 
     ReadWriteFromFile.write("FinalResult.csv", listZip.map(tuple => tuple._1.testCaseID + ", "
