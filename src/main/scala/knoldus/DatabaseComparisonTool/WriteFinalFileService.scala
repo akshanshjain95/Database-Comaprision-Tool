@@ -13,6 +13,6 @@ object WriteFinalFileService {
 
     ReadWriteFromFile.write("FinalResult.csv", listZip.map(tuple => tuple._1.testCaseID + ", "
     + tuple._1.testCaseDescription + ", " + tuple._2 + ", " + tuple._3 + ", " + tuple._4).mkString("\n"),
-      "/home/knoldus/outputCSVFiles")
+      "/src/test/resources/outputCSVFiles")
   }
 }
