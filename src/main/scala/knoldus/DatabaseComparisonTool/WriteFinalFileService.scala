@@ -13,6 +13,6 @@ object WriteFinalFileService {
 
     ReadWriteFromFile.write("FinalResult.csv", listZip.map(tuple => tuple._1.testCaseID + ", "
     + tuple._1.testCaseDescription + ", MySQl - " + tuple._2 + ", PostgreSQl - " + tuple._3 + ", SQLite - " + tuple._4).mkString("\n"),
-      "/src/test/resources/outputCSVFiles")
+      "src/test/resources/outputCSVFiles")
   }
 }
