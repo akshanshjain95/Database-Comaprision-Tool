@@ -1,0 +1,5 @@
+1,  Creating Employee table,  CREATE TABLE Employee(name VARCHAR(20), EmployeeID INT, zipcode INT, PhoneNo BIGINT);, 461514503
+2,  Altering Employee table by adding EmployeeAge column,  alter table Employee  ADD (EmployeeAge INT);, 668234241
+3,  Altering table Employee by modifying size of name column from 20 to 30,  ALTER TABLE Employee MODIFY name VARCHAR(30);, 100888620
+4,  Dropping Employee table,  drop table Employee;, 189009844
+5,  Renaming table Employee to Worker,  alter table Employee rename to Worker;, 133309655
