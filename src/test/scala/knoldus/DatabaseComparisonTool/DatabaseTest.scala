@@ -1,14 +1,17 @@
 package knoldus.DatabaseComparisonTool
 
+import java.sql.Connection
+
 import org.scalatest.FunSuite
 import org.scalatest.mockito.MockitoSugar
 import org.mockito.Mockito._
+import org.mockito.internal.handler.MockHandlerFactory
 
 
 
-class DatabaseTest extends FunSuite with MockitoSugar {
+class DatabaseTest extends FunSuite with MockitoSugar with Database {
 
-  val database = mock[Database]
+  val database = mockFunction[Unit, Connection]
 
   test("Testing time taken by query method executeQueries")
   {
@@ -16,9 +19,10 @@ class DatabaseTest extends FunSuite with MockitoSugar {
       , " DROP TABLE IF EXISTS Employee;", " CREATE TABLE Employee(name VARCHAR(20), EmployeeID INT, zipcode INT, PhoneNo BIGINT);",
       " DROP TABLE Employee;")
 
-    when(database.executeQueries(testCase, database.connectToDatabase)).thenReturn(100)
+    when(executeQueries(testCase, database.connectToDatabase)).thenReturn(100)
 
-    assert(database.executeQueries(testCase, database.connectToDatabase) === 100)
+    assert(executeQueries(testCase, database.connectToDatabase) === 100)
 
   }
+
 }

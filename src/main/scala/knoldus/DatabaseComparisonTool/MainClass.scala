@@ -10,5 +10,4 @@ object MainClass extends App with Database {
   val SQLiteTuple = SQLiteService.queryTime("src/test/resources/CSVInputFiles/SQLiteDDL.csv")
 
   WriteFinalFileService.writeFinalFile(mySqlTuple._1, mySqlTuple._2, postgreSQLTuple._2, SQLiteTuple._2)
-  
 }
