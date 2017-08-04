@@ -16,6 +16,6 @@ libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.3" % "test"
 
 libraryDependencies += "org.mockito" % "mockito-core" % "2.8.47" % "test"
 
-libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % Test
+libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % "test"
 
 coverageEnabled := true
