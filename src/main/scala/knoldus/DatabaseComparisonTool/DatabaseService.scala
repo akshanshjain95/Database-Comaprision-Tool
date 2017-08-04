@@ -22,7 +22,7 @@ trait DatabaseService extends Database {
     } yield "" + testCaseWithTimeTaken._1.testCaseID + ", " + testCaseWithTimeTaken._1.testCaseDescription +
       ", " + testCaseWithTimeTaken._1.query + ", " + testCaseWithTimeTaken._2
     val contentToWrite = writeContentList.mkString("\n")
-    ReadWriteFromFile.write(fileName + "_Result.csv", contentToWrite, "/home/knoldus/outputCSVFiles")
+    ReadWriteFromFile.write(fileName + "_Result.csv", contentToWrite, "src/test/resources/outputCSVFiles")
     closeConnection(connection)
     (testCaseList, timeTakenList)
   }
